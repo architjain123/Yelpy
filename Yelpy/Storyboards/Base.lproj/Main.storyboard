@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,15 +12,67 @@
             <objects>
                 <viewController title="ViewController" id="BYZ-38-t0r" customClass="RestaurantsViewController" customModule="Yelpy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I1t-bH-nKf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantCell" rowHeight="140" id="1kv-7S-SPa" customClass="RestaurantCell" customModule="Yelpy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1kv-7S-SPa" id="77u-vm-e4z">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qID-sS-eNt">
+                                                    <rect key="frame" x="20" y="11.000000000000002" width="244" height="21.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9mZ-2P-EGB">
+                                                    <rect key="frame" x="274" y="11" width="120" height="118"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="Kex-ZT-5PA"/>
+                                                        <constraint firstAttribute="height" constant="118" id="aTs-Gb-JYd"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9mZ-2P-EGB" firstAttribute="trailing" secondItem="77u-vm-e4z" secondAttribute="trailingMargin" id="1kb-hs-Mv5"/>
+                                                <constraint firstItem="9mZ-2P-EGB" firstAttribute="top" secondItem="77u-vm-e4z" secondAttribute="topMargin" id="7bd-Hi-l80"/>
+                                                <constraint firstItem="qID-sS-eNt" firstAttribute="leading" secondItem="77u-vm-e4z" secondAttribute="leadingMargin" id="ohN-eG-xd7"/>
+                                                <constraint firstItem="9mZ-2P-EGB" firstAttribute="leading" secondItem="qID-sS-eNt" secondAttribute="trailing" constant="10" id="r7K-Ai-bW2"/>
+                                                <constraint firstItem="9mZ-2P-EGB" firstAttribute="bottom" secondItem="77u-vm-e4z" secondAttribute="bottomMargin" id="sCD-qY-LVv"/>
+                                                <constraint firstItem="qID-sS-eNt" firstAttribute="top" secondItem="77u-vm-e4z" secondAttribute="topMargin" id="xg4-k8-gWK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="qID-sS-eNt" id="WTn-Tc-Nuj"/>
+                                            <outlet property="restaurantImage" destination="9mZ-2P-EGB" id="xaT-IR-fDM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="I1t-bH-nKf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1d7-eE-w3J"/>
+                            <constraint firstItem="I1t-bH-nKf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Olu-1Y-3Xj"/>
+                            <constraint firstItem="I1t-bH-nKf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gFn-mW-1cG"/>
+                            <constraint firstItem="I1t-bH-nKf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pk1-HB-k50"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="I1t-bH-nKf" id="Pv7-jZ-8fJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="123.88392857142857"/>
+            <point key="canvasLocation" x="131.8840579710145" y="123.09782608695653"/>
         </scene>
     </scenes>
 </document>
