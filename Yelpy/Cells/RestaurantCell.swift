@@ -2,7 +2,7 @@
 //  RestaurantCell.swift
 //  Yelpy
 //
-//  Created by Archit Jain on 8/30/20.
+//  Created by Memo on 5/28/20.
 //  Copyright © 2020 memo. All rights reserved.
 //
 
@@ -10,7 +10,12 @@ import UIKit
 
 class RestaurantCell: UITableViewCell {
 
-    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var starsImage: UIImageView!
+    @IBOutlet weak var reviewsLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var restaurantImage: UIImageView!
     
     override func awakeFromNib() {
